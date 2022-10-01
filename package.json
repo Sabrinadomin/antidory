@@ -1,0 +1,14 @@
+{
+  "name": "Grocery list bot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "Sabrina Conceicao",
+  "license": "ISC",
+  "dependencies": {
+    "telegraf": "^4.10.0"
+  }
+}
