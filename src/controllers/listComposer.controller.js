@@ -1,4 +1,8 @@
 const list = []
+const { formatList } = require('../utils/string.utils')
+const { connectDb } = require('../db/config')
+
+connectDb()
 
 function addOnList(ctx) {
   try {
@@ -16,18 +20,6 @@ function showList(ctx) {
     const formattedList = formatList(list)
     ctx.reply(formattedList)
     
-  } catch(err) {
-    console.error(err.message)
-  }
-}
-
-function formatList(list) {
-  try {
-    let formattedList = 'Sua lista: \n'
-    list.forEach(item => {
-      formattedList += `- ${item} \n`
-    }) 
-    return formattedList
   } catch(err) {
     console.error(err.message)
   }

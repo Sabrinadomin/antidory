@@ -9,6 +9,8 @@
   "author": "Sabrina Conceicao",
   "license": "ISC",
   "dependencies": {
+    "dotenv": "^16.0.3",
+    "mongoose": "^6.6.3",
     "telegraf": "^4.10.0"
   }
 }
