@@ -8,4 +8,5 @@ With this bot you can make shopping lists through telegram and never forget to b
 Don't be Dory! 🐠
 
 Obs.: This bot is a WIP.
-Link to chatbot: https://t.me/BlabOpsBot
+
+Link to chatbot: https://t.me/AntidoryBot or just write Antidory on Telegram searchbar.
