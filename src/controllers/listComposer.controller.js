@@ -1,12 +1,12 @@
-const list = []
-const { formatList } = require('../utils/string.utils')
 const { connectDb } = require('../db/config')
+const { updateList, getUserList } = require('./user.controller')
 
 connectDb()
 
-function addOnList(ctx) {
+async function addOnList(ctx) {
   try {
     const message = ctx.update.message.text
+    await updateList(ctx, message)
     list.push(message)
     ctx.reply('Adicionado!')
     
@@ -15,11 +15,10 @@ function addOnList(ctx) {
   }
 }
 
-function showList(ctx) {
+async function showList(ctx) {
   try {
-    const formattedList = formatList(list)
+    const formattedList = await getUserList(ctx)
     ctx.reply(formattedList)
-    
   } catch(err) {
     console.error(err.message)
   }
