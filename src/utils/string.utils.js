@@ -1,8 +1,9 @@
 function formatList(listObj) {
   try {
     let formattedList = 'Sua lista: \n'
-    const list2 = [...listObj]
-    list2.forEach(item => {
+    const spreadList = [...listObj]
+    if(spreadList.length === 0) return 'Você não tem nada na lista! 😕'
+    spreadList.forEach(item => {
       if(item) formattedList += `- ${item} \n`
     }) 
     return formattedList
@@ -11,6 +12,11 @@ function formatList(listObj) {
   }
 }
 
+function printBotMessage(message) {
+  console.error(`AntidoryBot message: "${message}"`)
+}
+
 module.exports = {
-  formatList
+  formatList,
+  printBotMessage
 }

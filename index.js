@@ -10,6 +10,6 @@ bot.on('message', messageHandler)
 mongoose.connection.once('open', () => {
   console.info('Connected to MongoDB')
   bot.launch()
-    .then(console.log("Telegram bot online!"))
+    .then(console.log("🤖 Telegram bot online!"))
     .catch((err) => { console.error(err) })
 })

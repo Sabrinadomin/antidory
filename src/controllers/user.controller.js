@@ -45,7 +45,7 @@ async function userHandle(ctx) {
     const existentUser = await userSearch(ctx)
     if(existentUser === true) return
     const createNewUserResult = await addNewUser(ctx)
-    if(createNewUserResult) console.info('Usuário criado')
+    if(createNewUserResult) console.info('New user created on database.')
   } catch(err) {
     console.error(err)
   }
@@ -63,8 +63,18 @@ async function getUserList(ctx) {
   }
 }
 
+async function deleteUserList(ctx) {
+  try {
+    const reference = { telegramId: ctx.update.message.chat.id }
+    await User.findOneAndUpdate(reference, { list: [] })
+  } catch(err) {
+    console.log(err)
+  }
+}
+
 module.exports = {
   userHandle,
   updateList,
-  getUserList
+  getUserList,
+  deleteUserList
 }
