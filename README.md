@@ -1,4 +1,4 @@
-# groceryListChatbot
+# Antidory Bot
 🤖 A telegram bot made with nodejs.
 
 With this bot you can make shopping lists through telegram and never forget to buy something again!
